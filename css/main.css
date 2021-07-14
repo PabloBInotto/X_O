@@ -1,0 +1,49 @@
+
+  .container {
+    position: relative;
+    width:100%;
+    height:800px;
+  }
+
+  .interna {
+    left:10%;
+    top:10%;
+    margin-left:10px; /* Metade do valor da Largura */
+    margin-top:15px; /* Metade da valor da Altura */
+    position:absolute;
+    width:800px; /* Valor da Largura */
+    height:500px; /* Valor da Altura */
+    }
+  
+  .topleft {
+    position:absolute;
+    top: 18px;
+    left: 16px;
+    font-size: 18px;
+  }
+
+  .bottomleft {
+    position: absolute;
+    bottom: 18px;
+    left: 16px;
+    font-size: 18px;
+  }
+  
+  img { 
+    width: 100%;
+    height: auto;
+  }
+
+  a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  a:hover, a:active {
+    background-color: rgb(36, 185, 44);
+  }
+
