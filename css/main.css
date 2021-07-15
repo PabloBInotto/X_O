@@ -11,8 +11,8 @@
     margin-left:10px; /* Metade do valor da Largura */
     margin-top:15px; /* Metade da valor da Altura */
     position:absolute;
-    width:800px; /* Valor da Largura */
-    height:500px; /* Valor da Altura */
+    width:600px; /* Valor da Largura */
+    height:600px; /* Valor da Altura */
     }
   
   .topleft {
@@ -24,7 +24,7 @@
 
   .bottomleft {
     position: absolute;
-    bottom: 18px;
+    bottom: 210px;
     left: 16px;
     font-size: 18px;
   }
@@ -47,3 +47,18 @@
     background-color: rgb(36, 185, 44);
   }
 
+  .play {
+    float: left;
+    padding: 15px; 
+    width: 150px;
+    height: 150px;
+    border-color: darkgrey;
+    border-style: solid;
+    font-size:100px;
+    text-align: center;
+  }
+
+  .uncleckable{
+    pointer-events: none;
+  }
+  
