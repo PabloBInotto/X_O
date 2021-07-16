@@ -1,63 +1,83 @@
-# Nome do seu projeto
-> Um resumo curto sobre o que o seu projeto faz
+# Jogo da Velha
+> Aplicação em nodejs, socket.io e mongoBD
 
-Um ou dois parágrafos sobre seu projeto e
-o que ele faz.
+A diferencial desse projeto foi enviar os dados das jogadas para o servidor e salvar na base de dados, usando o evento do socket.io.
 
-![](pag.png)
+Foi desenvolvida duas versões:
+ - v1.0 sem base de dados e v2.0 com base de dados;
 
 ## Instalação
 
-Mac OS X & Linux:
+Primeiramente deve ser instalado o modoDB.
+Linux:
+No ambiente de desenvolvimento foi utilizado o linux (Arch-Linux). Uma distribuição do Manjaro!
+Nota: Cada distribuição linux pode ter repositórios e formas diferentes para a instalação
 
+par instalar no manjaro, siga os procedimento s abaixo: 
+
+1 - Abra o terminal e insira a linha de código abaixo e tecle enter (sera solicitado a senha e a confirmação de instalação em alguns momentos)
 ```sh
-npm install --save
+git clone https://aur.archlinux.org/mongodb-bin.git
+```
+2 - Acesse a pasta que foi clonada:
+```sh
+cd mongodb-bin
+```
+3 - realize a instalação:
+```sh
+run makepkg -si
+```
+4 - Inicialização do mongoDB:
+```sh
+systemctl start mongodb
+```
+5 - Abrir o mongoDB:
+```sh
+systemctl enable mongodb
+```
+#### Para instalação em outras distribuições linux, por favor verificar o link abaixo:
+https://docs.mongodb.com/manual/administration/install-on-linux/
+
+#### Instalação no macOS
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+
+#### Instalação no windows (Muitas vezes é necessário definir variável de ambiente):
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/
+
+## Instalação da aplicação "Jogo da velha":
+
+1 - Siga com os procedimentos abaixo:
+1.2 Baixe os arquivos do repositório.
+
+- Versão com base de dados:
+- - arquivo zip: https://github.com/PabloBInotto/X_O/archive/refs/tags/v2.0.zip
+- - arquivo tar: https://github.com/PabloBInotto/X_O/archive/refs/tags/v2.0.tar.gz
+
+2 - Descompacte os aquivos e acesse o diretório dos arquivos com o terminal ou Prompt de commando.
+
+3 - Necessário ter o nodeJS instalado:
+Nota: (link para instalar o node: https://nodejs.org/en/download/).
+
+4 - Para instalar execute o comando:
+```sh
+npm install
 ```
 
-Windows:
-
+5 - Para iniciar o servidor nodeJS, execute o commando:
 ```sh
-edit autoexec.bat
+npm start
 ```
 
-## Exemplo de uso
+6 - Por último, abra um navegador de internet (Não foi testado no internet explorer, somente no Chrome e Firefox) e acesse o link abaixo:
 
-Alguns exemplos que motivariam as pessoas a
-utilizarem seu projeto ou que demonstrasse
-que este é últil para alguma coisa. Divida 
-esta parte em partes menores e se possível 
-coloque algum código ou prints de telas.
+http://localhost:3000/
 
-## Ambiente de Desenvolvimento
+7 - Para jogar, clique no botão jogar.
 
-Descrever como instalar e preparar qualquer
-dependência de desenvolvimento para que
-seu projeto possa ser executado localmente
-e pessoas possam contribuir com o mesmo.
-Se possível forneça as informações para
-diferentes plataformas, exemplo Windows,
-Linux e Mac OS.
+Nota: Para a versão sem base de dados é somente necessário baixar, descompactar, acessar a pasta do arquivo descompactado e clicar no arquivo "index.html":
 
-## Histórico de Atualizações
+- Versão sem base de dados: 
+- - arquivo zip: https://github.com/PabloBInotto/X_O/archive/refs/tags/v1.0.zip
+- - arquivo tar: https://github.com/PabloBInotto/X_O/archive/refs/tags/v1.0.tar.gz
 
-* 0.2.1
-    * CHANGE: Atualização dos docs (o código não foi alterado)
-* 0.2.0
-    * CHANGE: Removida a função `setPadrãoXYZ()`
-    * ADD: Adicionado a função `inicializar()`
-* 0.1.1
-    * FIX: Crash quando executava `escrever()` (Obrigado ao @Contribuidor)
-* 0.1.0
-    * O primeiro lançamento estável
-    * CHANGE: Renomeado de `Projeto XYZ` para `Projeto ABC`
-* 0.0.1
-    * Projeto inicial
-
-
-## Meta
-
-Seu nome - [@SeuTwitter](https://twitter.com/seuTwitter) - seuemail@gmail.com
-
-Distribuído sobre a licença. Veja `LICENÇA` para mais informações.
-
-[https://github.com/seuusuaurio/seuprojeto](https://github.com/seusuario)
+#### Espero que gostem! ;)
