@@ -9,11 +9,12 @@ const io = new Server(server);
 
 var mongoose = require("mongoose");
 
+// Start mongoDB
 mongoose.connect("mongodb://127.0.0.1:27017", {
   useUnifiedTopology: true,
   useNewUrlParser: true
 });
-
+// Create mongo schema
 var db = mongoose.connection;
 var schema = mongoose.Schema({
   player: String,
@@ -29,18 +30,17 @@ db.once("open", function() {
 });
 
 var port = 3000;
-
-
+// socket.io communication
 io.on('connection', (socket) => {
 
     socket.on('new_play', (msg) => {
       console.log('message: ' + + msg.best + ': ' + msg.played);
 
+      // SAve data to DB
       var dados = new Model({ player: msg.best, result:  msg.played });
-
       dados.save(function(err, doc) {
         if (err) return console.error(err);
-        console.log("Document inserted succussfully!");
+        console.log("Os dados foram salvos!");
       });
 
     });
@@ -54,14 +54,6 @@ io.on('connection', (socket) => {
     });
 
   });
-
-  async function listDatabases(client){
-      databasesList = await client.db().admin().listDatabases();
-  
-      console.log("Databases:");
-      databasesList.databases.forEach(db => console.log(` - ${db.name}`));
-  };
-
 
 app.set('views', __dirname + '/views');
 app.use(express.static(path.join(__dirname, 'public')));
@@ -78,4 +70,4 @@ app.get('/play', function(req, res){
 
 server.listen(port, () => {
     console.log('listening on *:' + port);
-  });
+});
