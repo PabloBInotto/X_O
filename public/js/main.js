@@ -1,7 +1,6 @@
-  var socket = io();
-  
-  var act_level = 1;
-
+// Define variables
+var socket = io();  
+var act_level = 1;
 var array = [0,1,2,3,4,5,6,7,8];
 var fill = [0,1,2,3,4,5,6,7,8];
 var un_fill;
@@ -10,11 +9,14 @@ var maq = [,,,,,,,,]
 var hum = [,,,,,,,,]
 var played = [,,,,,,,,]
 
+// Restart function
 function restart(m) {
     socket.emit('new_play', {best: winner, played: array});
     alert(m);
     location.reload();
 }
+
+// print data on console function
 
 function print() {
     console.log(array)
@@ -22,6 +24,8 @@ function print() {
     console.log(hum) 
 }
 
+
+// Change level function
 function change_(l, p, t) {
     var data = {best: winner, played: array}
     socket.emit('new_play', {best: winner, played: array});
@@ -48,6 +52,7 @@ function change_(l, p, t) {
         document.getElementById("level").innerHTML = "Nível:" + "'" + t + "'";
 }
 
+// Change level options
 function change_level(winner) {
     if (act_level == 1) {
         change_(2, 66, 'Médio')
@@ -64,6 +69,7 @@ function change_level(winner) {
     }  
 }
 
+// not winner function
 function not_winner(){
     if (act_level == 1) {
         console.log('Não houve ganhador')
@@ -77,6 +83,7 @@ function not_winner(){
 }
 
 
+// check if winner function
 function check(arr, user, p) {
     console.log('################# ' + act_level)
     if (arr[0] == p && arr[1] == p && arr[2]== p ) { // line 1
@@ -139,6 +146,7 @@ function check(arr, user, p) {
     print()
 }
 
+// concat results function
 function conc(m, h, u) {
     console.log('played ', played)
     for (let i = 0; i < played.length; i++) {
@@ -152,6 +160,7 @@ function conc(m, h, u) {
 }
 
 
+// Computer fill function
 function filled(i) {
 
     var not_fill = array.filter(function(item) {
@@ -176,11 +185,9 @@ function filled(i) {
     if (not_fill.length == 0) {
         not_winner(2)
     }
-    
-        
 }
 
-
+// Machine player function
 function machine(level) {
     //console.log(no_used)
 
@@ -589,7 +596,8 @@ function machine(level) {
 }
 
 
-    function reply_click(clicked_id)
+// human player function
+    function human(clicked_id)
 
   {
     var not_fill = array.filter(function(item) {
